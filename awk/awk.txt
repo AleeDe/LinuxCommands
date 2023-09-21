@@ -1,0 +1,7 @@
+awk '{print $2}' sample.txt
+$2 mean 2 cloum
+like this 2 and 3 cloum
+awk '{print $2,$3}' sample.txt
+for last cloum
+awk '{print $NF}' sample.txt
+awk -F, '{print $3}' sample.txt

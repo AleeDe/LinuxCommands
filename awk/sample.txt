@@ -1,0 +1,5 @@
+id,firstname,lastname,email,profession
+1,Muhammad,Ali,muhammadali@gmail.com,student
+2,Muhammad,Raza,muhammadraza@gmail.com,teacher
+3,Zaheer,Ali,zaheerali@gmail.com,student
+4,Sohail,Abbas,sohailaabbas@gmail.com,student

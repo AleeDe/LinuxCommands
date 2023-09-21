@@ -1,0 +1,4 @@
+1,Muhammad,sadiq,muhammadali@gmail.com,student
+2,Muhammad,Raza,muhammadraza@gmail.com,teacher
+3,Zaheer,sadiq,zaheerali@gmail.com,student
+4,Sohail,Abbas,sohailaabbas@gmail.com,student

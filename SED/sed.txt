@@ -1,0 +1,49 @@
+see specific line
+sed -n '[line_number]p' filename
+eg:
+    sed -n '3p' sample.txt
+2,Muhammad,Raza,muhammadraza@gmail.com,teacher
+
+see last line
+sed -n '$p' filename
+eg:
+    sed -n '3p' sample.txt
+4,Sohail,Abbas,sohailaabbas@gmail.com,student 
+
+see the range of line in a file
+eg:
+    sed -n '3,5p' sample.txt 
+2,Muhammad,Raza,muhammadraza@gmail.com,teacher
+3,Zaheer,Ali,zaheerali@gmail.com,student
+4,Sohail,Abbas,sohailaabbas@gmail.com,student  
+
+see the student data only
+sed -n '/student/p' filename
+eg: 
+    sed -n '/student/p' sample.txt 
+1,Muhammad,Ali,muhammadali@gmail.com,student
+3,Zaheer,Ali,zaheerali@gmail.com,student
+4,Sohail,Abbas,sohailaabbas@gmail.com,student   
+
+see specfic line only
+sed -n -e '3p' -e '5p' filename
+eg: 
+    sed -n -e '3p' -e '5p' sample.txt 
+2,Muhammad,Raza,muhammadraza@gmail.com,teacher
+4,Sohail,Abbas,sohailaabbas@gmail.com,student 
+
+searching multiples condition
+sed -n -e '/student/p' -e '/teacher/p' filemname
+eg:
+    sed -n -e '/student/p' -e '/teacher/p' sample.txt 
+1,Muhammad,Ali,muhammadali@gmail.com,student
+2,Muhammad,Raza,muhammadraza@gmail.com,teacher
+3,Zaheer,Ali,zaheerali@gmail.com,student
+4,Sohail,Abbas,sohailaabbas@gmail.com,student 
+
+replace a word from termail
+sed 's/ali/sadiq/g' sample.txt 
+
+
+replace a word from file
+sed -i 's/ali/sadiq/g' sample.txt

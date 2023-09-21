@@ -1,0 +1,149 @@
+grep is used like find in window
+grep [option] [searching word] [filename]
+eg:
+     grep ali sample.txt     
+to ignore the upper and lower case while searching -i
+eg: 
+    grep -i ali sample.txt 
+
+to search everything expect given pattern/keyword -v
+eg: 
+    grep -v ali sample.txt 
+    grep -iv ali sample.txt 
+
+to print how many times (count )given keyword present in file -c
+eg: 
+    grep -c ali sample.txt 
+    grep -ivc ali sample.txt 
+
+to search for exact match of given keyword in a flie -w
+eg: 
+    grep -w Ali sample.txt 
+    grep -ivcw Ali sample.txt 
+
+show seaching word with line number -n
+eg:
+    grep -n ali sample.txt
+
+to search a given keyword in multiple files
+grep [keyword] file1 file2.....
+eg:
+    grep -n Ali sample.txt sample1.txt 
+sample.txt:2:1,Muhammad,Ali,muhammadali@gmail.com,student
+sample.txt:4:3,Zaheer,Ali,zaheerali@gmail.com,student
+sample1.txt:2:1,Zaheer,Ali,zaheerali@gmail.com,student
+sample1.txt:4:3,Muhammad,Ali,muhammadali@gmail.com,student
+
+to supress the files name
+grep -h Ali file1 file2....
+eg:
+    grep -hn Ali sample.txt sample1.txt
+2:1,Muhammad,Ali,muhammadali@gmail.com,student
+4:3,Zaheer,Ali,zaheerali@gmail.com,student
+2:1,Zaheer,Ali,zaheerali@gmail.com,student
+4:3,Muhammad,Ali,muhammadali@gmail.com,student
+
+
+to search multiple keywords in a file
+grep -e [keyowrd1] -e [keyword2]  filename
+eg:
+    grep -e ali -e zaheer sample.txt  
+1,Muhammad,Ali,muhammadali@gmail.com,student
+3,Zaheer,Ali,zaheerali@gmail.com,student
+
+to only print file names which matches given keyword
+grep 0l [keyword] filename
+eg:
+    grep -l ali  sample.txt  
+sample.txt
+
+to get the keywords/pattern from a file and match with a nother file
+grep -f keyword.txt filename
+eg:
+    rep -f keyword.txt  sample.txt sample1.txt 
+sample.txt:1,Muhammad,Ali,muhammadali@gmail.com,student
+sample.txt:3,Zaheer,Ali,zaheerali@gmail.com,student
+sample1.txt:1,Zaheer,Ali,zaheerali@gmail.com,student
+sample1.txt:3,Muhammad,Ali,muhammadali@gmail.com,student
+
+to print the matching line which start with given keyword
+grep "^keyword" file
+eg: 
+    rep -f keyword.txt  sample.txt sample1.txt 
+sample.txt:1,Muhammad,Ali,muhammadali@gmail.com,student
+sample.txt:3,Zaheer,Ali,zaheerali@gmail.com,student
+sample1.txt:1,Zaheer,Ali,zaheerali@gmail.com,student
+sample1.txt:3,Muhammad,Ali,muhammadali@gmail.com,student
+
+to print the matching line which end with given keyword
+grep "keyword$" file
+eg: 
+    grep "student$" sample.txt sample1.txt 
+sample.txt:1,Muhammad,Ali,muhammadali@gmail.com,student
+sample.txt:3,Zaheer,Ali,zaheerali@gmail.com,student
+sample.txt:4,Sohail,Abbas,sohailaabbas@gmail.com,student
+sample1.txt:1,Zaheer,Ali,zaheerali@gmail.com,student
+sample1.txt:2,Sohail,Abbas,sohailaabbas@gmail.com,student
+sample1.txt:3,Muhammad,Ali,muhammadali@gmail.com,student
+
+suppose we have 100 files in a directory (dirA) and we need to search a keyword in all the files
+grep -R [keyword.txt] [directorypath]
+eg:
+    rep -Rf keyword.txt .                
+./keyword.txt:ali
+./keyword.txt:zaheer
+./sample1.txt:1,Zaheer,Ali,zaheerali@gmail.com,student
+./sample1.txt:3,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:     grep ali sample.txt     
+./greb.txt:    grep -i ali sample.txt 
+./greb.txt:    grep -v ali sample.txt 
+./greb.txt:    grep -iv ali sample.txt 
+./greb.txt:    grep -c ali sample.txt 
+./greb.txt:    grep -ivc ali sample.txt 
+./greb.txt:    grep -n ali sample.txt
+./greb.txt:sample.txt:2:1,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:sample.txt:4:3,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:sample1.txt:2:1,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:sample1.txt:4:3,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:2:1,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:4:3,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:2:1,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:4:3,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:    grep -e ali -e zaheer sample.txt  
+./greb.txt:1,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:3,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:    grep -l ali  sample.txt  
+./greb.txt:sample.txt:1,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:sample.txt:3,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:sample1.txt:1,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:sample1.txt:3,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:sample.txt:1,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:sample.txt:3,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:sample1.txt:1,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:sample1.txt:3,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:sample.txt:1,Muhammad,Ali,muhammadali@gmail.com,student
+./greb.txt:sample.txt:3,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:sample1.txt:1,Zaheer,Ali,zaheerali@gmail.com,student
+./greb.txt:sample1.txt:3,Muhammad,Ali,muhammadali@gmail.com,student
+./sample.txt:1,Muhammad,Ali,muhammadali@gmail.com,student
+./sample.txt:3,Zaheer,Ali,zaheerali@gmail.com,student  
+
+
+we can use egrep command for the mul;tiple keyword searching
+egrep "keyowrd1|keyowrd2..." filename
+eg:
+    egrep "ali|zaheer|raza" sample.txt 
+1,Muhammad,Ali,muhammadali@gmail.com,student
+2,Muhammad,Raza,muhammadraza@gmail.com,teacher
+3,Zaheer,Ali,zaheerali@gmail.com,student
+
+if we just wanna seach but don't want to print on termail
+grep -q "keyword" file
+eg:
+    grep -q ali sample.txt  
+    then we check with is run or not by this
+    echo $? 
+wanna to supress error message
+grep -s "keyowrd1" file
+eg:
+    grep -qs ali sample.txt  
